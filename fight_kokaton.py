@@ -146,7 +146,7 @@ class Explosion:
 
     def update(self, screen: pg.Surface):
         self.life -= 1
-        self.img = self.imgs[self.life//10%2]
+        self.img = self.imgs[self.life // 10 % 2] #計算が見えやすいように修正
         screen.blit(self.img, self.rct)
 
 
