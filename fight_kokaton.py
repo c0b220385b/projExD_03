@@ -149,6 +149,15 @@ class Explosion:
         self.img = self.imgs[self.life//10%2]
         screen.blit(self.img, self.rct)
 
+class Score:
+    def __init__(self, num: int):
+        self.font = pg.font.SysFont("hgp創英角ポップ体", 30)
+        self.imgs = self.font.render("スコア:{num}", 0, (0, 0, 255))
+        self.map = 100, HEIGHT-50
+
+    def update(self, screen: pg.Surface):
+        self.img = self.imgs
+        screen.blit(self.img, self.map)
 
 
 def main():
@@ -160,6 +169,7 @@ def main():
     bombs = [Bomb((255, 0, 0), 10) for _ in range(NUM_OF_BOMBS)]
     beam = None
     explosions : list[Explosion] = list()
+    socore = Score(0)
 
     clock = pg.time.Clock()
     tmr = 0
