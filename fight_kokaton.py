@@ -107,6 +107,9 @@ class Bomb:
         self.rct.move_ip(self.vx, self.vy)
         screen.blit(self.img, self.rct)
 
+class Beam:
+    
+
 
 def main():
     pg.display.set_caption("たたかえ！こうかとん")
